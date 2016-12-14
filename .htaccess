@@ -1,0 +1,16 @@
+order deny,allow
+allow from all
+allow from localhost
+allow from 127.0.0.1
+
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+#RewriteRule ^(.*)$ index.php?rt=$1 [QSA]
+
+#RewriteRule ^(.*)/([0-9]+)$ index.php?rt=$1&id=$2 [L,QSA]
+#RewriteRule ^product/([0-9]+)$ index.php?rt=product&id=$1 [L,QSA]
+
+

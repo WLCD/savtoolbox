@@ -1,0 +1,21 @@
+; $Id: default.info,v 1.1.0.0 2011/05/22 12:04:00 WLCD Exp $
+
+;----------// Theme Information
+
+name        = default
+description = Thème par défaut du gamemanager
+screenshot   = default.png
+
+;----------// Modular Stylesheets
+
+; block, comment, node, page and style CSS.
+
+stylesheets[] = css/style.css
+stylesheets[] = css/lists.css
+stylesheets[] = css/forms.css
+stylesheets[] = css/tables.css
+stylesheets[] = css/console.css
+
+;---------// if you prefer to use only one file (aka better IE compatibility
+;---------// just comment the above and uncomment the following
+;stylesheets[] = style.css

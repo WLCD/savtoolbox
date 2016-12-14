@@ -1,0 +1,22 @@
+; $Id: default.info,v 1.1.0.0 2011/05/22 12:04:00 WLCD Exp $
+
+;----------// Theme Information
+
+name        = default
+description = Thème par défaut AerialSeed
+screenshot   = default.png
+
+;----------// Modular Stylesheets
+
+; block, comment, node, page and style CSS.
+
+stylesheets[] = css/console.css
+stylesheets[] = css/style.css
+;stylesheets[] = css/lists.css
+;stylesheets[] = css/forms.css
+;stylesheets[] = css/tables.css
+
+
+;---------// if you prefer to use only one file (aka better IE compatibility
+;---------// just comment the above and uncomment the following
+;stylesheets[] = style.css
