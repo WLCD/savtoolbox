@@ -32,8 +32,9 @@ $(document).ready(function(){
 
 //checked collection status
 
-$(document).ready(function(){
-    $("checkbox#collect").change( function(){
-        alert("valider l'enlèvement ?");
-    });
+$("#collect").change(function(){
+    if (this.checked)
+    {
+        alert('Collection is checked !');
+    }
 });

@@ -47,6 +47,9 @@
     /*** create the database registry object ***/
     $registry->db = db::get($registry->settings, $registry->console);
     
+    /*** create the session object ***/
+    $registry->session = session::get($registry->settings, $registry->db);
+    
     /*** create the facebook registry object ***/
     //$registry->fb = fb::get($registry->settings, $registry->console);
     

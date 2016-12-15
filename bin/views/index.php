@@ -30,7 +30,9 @@
         </div> <!-- End Of main DIV -->
         <!-- javascript-->
         <?php
-        foreach ($js_libs as $lib) echo "<script type=text/javascript src='".$js_path.$lib."'></script>\n\t";
+        foreach ($js_libs as $lib) {
+            echo "<script type=text/javascript src='".$js_path.$lib."'></script>\n\t";
+        }
         ?>
          
     </body>

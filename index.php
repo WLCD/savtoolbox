@@ -33,7 +33,7 @@ $registry->style = new style($registry);
 /*** load up the menu ***/
 $registry->menu = new menu($registry);
 
-/*** load up the menu ***/
+/*** load up the login ***/
 $registry->login = new login($registry);
 
 /*** load up the template ***/

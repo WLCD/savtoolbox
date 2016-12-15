@@ -49,18 +49,19 @@ Class session
     public static function write ($sid, $data)//écriture
     {
         $expire = intval(time() + self::$session_time);//calcul de l'expiration de la session
-        $data = mysql_real_escape_string($data);//si on veut stocker du code sql 
+        $sess_data = mysqli_real_escape_string($data);//si on veut stocker du code sql 
 
         $sql = "SELECT COUNT(sess_id) AS total
                 FROM session
                 WHERE sess_id = '$sid' ";
 
         $query = self::$_db->query($sql) or exit(mysql_error());
-        $return = mysql_fetch_array($query);
+        $return = mysqli_fetch_array($query);
         if($return['total'] == 0)//si la session n'existe pas encore
         {
                 $sql = "INSERT INTO session
-                        VALUES('$sid','$data','$expire')";//alors on la crée
+                        SET sess_datas = '$sess_data',
+                            sess_expire ='$expire'"; //alors on la crée
 
         }
         else//sinon
@@ -73,6 +74,16 @@ Class session
         $query = self::$_db->query($sql) or exit(mysql_error());
 
         return $query;
+    }
+    
+    public static function getSessionByUserId($id)
+    {
+        $sql = "SELECT sess_id
+                FROM session
+                WHERE userid = '$sid' ";
+
+        $query = self::$_db->query($sql) or exit(mysql_error());
+        return mysqli_fetch_assoc($query);
     }
 
     public static function close()//fermeture
