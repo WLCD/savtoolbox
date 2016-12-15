@@ -1,18 +1,13 @@
-/* 
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-//parse employees from company id
+//parse employees from customer id
 $(document).ready(function(){
   
   $("#recipient").hide();
-  $("#company").change( function() {
+  $("#customer").change( function() {
         $("#recipient").hide();
         $("#result").html('Retrieving ...');
         $.ajax({
             type: "POST",
-            data: "id=" + $("#company :selected").val(),
+            data: "id=" + $("#customer :selected").val(),
             url: "bin/employees.php",
             success: function(msg){
                 if (msg != ''){
@@ -34,3 +29,11 @@ $(document).ready(function(){
 //        $("div#news").load('bin/displaynews.php?page='+ $(document).getUrlParam("page") + '&items_nb=' + $("#items_nb :selected").val(), {value: $(this).val()});
 //    });
 //});
+
+//checked collection status
+
+$(document).ready(function(){
+    $("checkbox#collect").change( function(){
+        alert("valider l'enlèvement ?");
+    });
+});

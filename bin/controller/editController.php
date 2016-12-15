@@ -171,7 +171,7 @@ Class editController Extends baseController {
                             <option value="RMA">RMA</option>
                             <option value="DOA">DOA</option>
                         </select>
-                        <input type="text" name="casedate" value="'.$case->date().'"/><br />
+                        <input type="text" name="casedate" value='.$case->date().'/><br />
                         <label for="customer">Customer</label>
                         <select name="customer" id="customer">
                             <option value="#">-select-</option>';
@@ -194,9 +194,10 @@ Class editController Extends baseController {
                         <input type="text" name="sn" value="'.$case->sn().'"/><br />
                         <label for="desc">Description</label>
                         <input type="textarea" name="desc" value="'.$case->info().'"/><br />
+                        <label for="ref">Reference</label>
                         <input type="text" name="ref" value="'.$case->ref().'"/><br />
                         <label for="collect">Collect ?</label>
-                        <input type="checkbox" name="collect" value="1"'.$is_checked.'><br />
+                        <input type="checkbox" name="collect" value="'.$is_checked.'"><br />
                         <label for="case_closed">Closed Date : </label>
                         <input type="text" name="case_closed" value="'.$case->case_closed().'">
                     '."\n";

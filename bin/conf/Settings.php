@@ -42,7 +42,7 @@ class Settings
     public $js_path = 'js/';
     public $js_libs = array (
                             'jquery.js',
-                            'mktoolbox.js',
+                            'savtoolbox.js',
                             'geturlparam.js',
                             'highcharts.js'
                             );

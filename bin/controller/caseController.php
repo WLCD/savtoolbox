@@ -11,7 +11,7 @@ class caseController extends baseController {
         if(isset ($_GET['id']))
         {
             $case = $this->registry->casex->get((int) $_GET['id']);
-            $client = $this->registry->company->get($case->idcustomer());
+            $client = $this->registry->customer->get($case->idcustomer());
             
             print_r($case->collect());
 
@@ -19,7 +19,7 @@ class caseController extends baseController {
                 <h1>".$case->type().$this->registry->casex->getFormattedDate($case->id())."-".$case->ref()."</h1>
                 <table id=\"case_info\">
                     <tr class='light'>
-                        <td>Client Name</td><td><a href=\"?rt=company&id=".$client->id()."\">".$client->name()."</a></td>
+                        <td>Client Name</td><td><a href=\"?rt=customer&id=".$client->id()."\">".$client->name()."</a></td>
                     </tr>
                     <tr class='dark'>
                         <td>Return Address</td><td>".$client->address()."</td>
