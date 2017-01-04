@@ -19,7 +19,7 @@ class CasexManager {
     {
         
         $query_add = "INSERT INTO cases(name, EAN, SN, owner) 
-            VALUES('".$case['name']."','".$case['ean']."','".$case['sn']."', 1)";
+            VALUES('".$case['type']."','".$case['sn']."','".$case['idcustomer']."','".$case['idcustomer']."','".$case['ref']."','".$case['info']."','".$case['collect']."')";
         $this->db->query($query_add);
         if ($query_add) {$this->registry->console->message('Utilisateur ajouté avec succès !');}
     }

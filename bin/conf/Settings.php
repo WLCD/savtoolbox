@@ -51,7 +51,7 @@ class Settings
     public $up_path = 'uploads/';
     
     //éléments du menu de navigation
-    public $menu = array('Index', 'Cases', 'Customers', 'Clients');
+    public $menu = array('Index', 'Cases', 'Customers');
 
     public $sessionDataClassName    = "SavSession";
 

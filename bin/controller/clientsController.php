@@ -8,7 +8,7 @@ class clientsController extends baseController {
     public function index() {
         $this->registry->template->page_title = 'Clients Management';
         
-        $clients_list = $this->registry->company->getList();
+        $clients_list = $this->registry->customer->getList();
         
         $content[] = "<div id=\"clients\"><!-- Start of clients DIV -->
             <h1>Clients Management - Home</h1><br />

@@ -11,18 +11,27 @@ class caseController extends baseController {
         if(isset ($_GET['id']))
         {
             $case = $this->registry->casex->get((int) $_GET['id']);
-            $client = $this->registry->customer->get($case->idcustomer());
+            $customer = $this->registry->customer->get($case->idcustomer());
+            $collect = $case->collect();
             
-            print_r($case->collect());
+            if($collect != 0)
+            {
+                $collect_image = "<img src='bin/style/default/css/img/collected.png'";
+            }
+            
+            else
+            {
+                $collect_image = "<img src='bin/style/default/css/img/notcollected.png'";
+            }
 
             $content[] = "<div id=\"case\"><!-- Start of cases DIV -->
                 <h1>".$case->type().$this->registry->casex->getFormattedDate($case->id())."-".$case->ref()."</h1>
                 <table id=\"case_info\">
                     <tr class='light'>
-                        <td>Client Name</td><td><a href=\"?rt=customer&id=".$client->id()."\">".$client->name()."</a></td>
+                        <td>Client Name</td><td><a href=\"?rt=customer&id=".$customer->id()."\">".$customer->name()."</a></td>
                     </tr>
                     <tr class='dark'>
-                        <td>Return Address</td><td>".$client->address()."</td>
+                        <td>Return Address</td><td>".$customer->address()."</td>
                     </tr>
                     <tr class='light'>
                         <td>SN</td><td>".$case->sn()."</a></td>
@@ -31,10 +40,7 @@ class caseController extends baseController {
                         <td>Description</td><td>".$case->info()."</td>
                     </tr>
                     <tr class='light'>
-                        <td>Email</td><td><a href='mailto:".NULL."'>".NULL."</a></td>
-                    </tr>
-                    <tr class='dark'>
-                        <td>Collect</td><td>".$case->collect()."</td>
+                        <td>Collect</td><td>".$collect_image."</td>
                     </tr>
                     <tr class='dark'>
                         <td>Date Closed</td><td>".$case->case_closed()."</td>

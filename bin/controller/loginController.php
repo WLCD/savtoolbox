@@ -17,7 +17,6 @@ Class loginController Extends baseController {
         if($this->registry->users->exists(filter_input($_POST['username'])))
         {
             $user = $this->registry->users->get(filter_input($_POST['username']));
-            print('cul :'.$user->name());
             
             if($user->password() == filter_input($_POST['userpassword']))
             {
@@ -29,7 +28,7 @@ Class loginController Extends baseController {
                 
                 $session = $this->registry->session->getSessionByUserId($user->id());
                 
-                $data = $_POST;
+                $data = "session data is supposed to be here";
                 
                 if (empty($session->id))
                 {

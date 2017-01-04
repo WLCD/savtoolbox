@@ -32,9 +32,12 @@ $(document).ready(function(){
 
 //checked collection status
 
-$("#collect").change(function(){
-    if (this.checked)
-    {
-        alert('Collection is checked !');
-    }
-});
+//$(document).ready(function(){
+//if ( $('input[name=collect]').is(':checked'))
+//{
+//    alert("This case needs collection");
+//}
+//else {
+//    alert("No collection");
+//}
+//});

@@ -130,9 +130,7 @@ class Casex {
     }
     
     public function setIdCustomer($idcustomer)
-    {
-        $idcustomer = (int) $idcustomer;
-        
+    {   
         if ($idcustomer > 0)
         {
             $this->idcustomer = $idcustomer;
@@ -141,11 +139,7 @@ class Casex {
     
     public function setCollect($collect)
     {      
-        //we check for integer, but the value has to be boolean
-        if (is_int($collect))
-        {
             $this->collect = $collect;
-        }
     }
     
     public function setInfo($info)

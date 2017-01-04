@@ -25,7 +25,7 @@ class login {
         
         if($connect != NULL)
         {
-            $login[] = "<a href='?rt=profile&name=".$_SESSION['username']."'>".$_SESSION['username']."</a><a href='?rt=logout'><img src='bin/style/".$_SESSION['theme']."/css/img/logout.png' alt='Déconnexion' /></a>";
+            $login[] = "<a href='?rt=profile&name=".$_SESSION['username']."'>".$_SESSION['username']."</a><a href='?rt=logout'><img src='bin/style/default/css/img/logout.png' alt='Déconnexion' />Logout</a>";
         }
         
         else

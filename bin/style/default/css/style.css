@@ -105,12 +105,12 @@ li#products {
     background-image : url("img/products.png");
 }
 
-li#clients {
-    background-image : url("img/clients.png");
+li#customers {
+    background-image : url("img/customers.png");
 }
 
-li#deliveries {
-    background-image : url("img/deliveries.png");
+li#cases {
+    background-image : url("img/cases.png");
 }
 
 li#news {
@@ -132,13 +132,13 @@ text-align : right;
 
 /* FORMS */
 
-#company_add {
+#customers_add {
     text-align: center;
     width : 500px;
     margin-left: auto;
     margin-right: auto;    
 }
-#company_add input#submit {
+#customers_add input#submit {
     clear: both;
     margin-top: 20px;
     margin-left: auto;
@@ -164,13 +164,13 @@ text-align : right;
     margin-right: auto;
 }
 
-#add_company_left {
+#add_customers_left {
     width: 240px;
     text-align: right;
     float: left;
 }
 
-#add_company_right {
+#add_customers_right {
     width: 260px;
     text-align: right;
     float: right;
@@ -237,7 +237,7 @@ border: 1px solid #D8D8D8;
     text-align: left;
 }
 
-#clients_summary {
+#customers_summary {
     width: 340px;
 }
 
@@ -296,6 +296,24 @@ tr.dark {
 
 tr.light {
     background-color: white;
+}
+
+/* Table column settings */
+
+td#collected {
+    background-image : url("img/collected.png");
+    background-repeat : no-repeat;
+    background-position: center;
+    background-position: 2px 2px;
+    color: red;
+}
+
+d#notcollected {
+    background-image : url("img/notcollected.png");
+    background-repeat : no-repeat;
+    background-position: center;
+    background-position: 0px 0px;
+    color: red;
 }
 
 /* fieldset configuration */

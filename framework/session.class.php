@@ -49,7 +49,7 @@ Class session
     public static function write ($sid, $data)//écriture
     {
         $expire = intval(time() + self::$session_time);//calcul de l'expiration de la session
-        $sess_data = mysqli_real_escape_string($data);//si on veut stocker du code sql 
+        $sess_data = serialize(mysqli_real_escape_string($data));//si on veut stocker du code sql 
 
         $sql = "SELECT COUNT(sess_id) AS total
                 FROM session
@@ -67,7 +67,7 @@ Class session
         else//sinon
         {
                 $sql = "UPDATE session 
-                        SET sess_datas = '$data',
+                        SET sess_datas = '$sess_data',
                         sess_expire = '$expire'
                         WHERE sess_id = '$sid' ";//on la modifie
         }		
